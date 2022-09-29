@@ -192,60 +192,19 @@ export default class Home extends PageManager {
                     catUrl = block.data('tab-category-url'),
                     blockId = block.attr('id');
 
-                if (catUrl.includes("http")) {
-                    if (location.host.includes("en.superhairpieces.fr")) {
-                        catUrl = catUrl.replace("//superhairpieces.fr","//en.superhairpieces.fr");
+                    if (catUrl.includes("http")) {
+                        if (location.host.includes("en.superhairpieces.es")) {
+                            catUrl = catUrl.replace("//superhairpieces.es","//en.superhairpieces.es");
+                        }
                     }
-                }
                 if(!$('.productCarousel-tabs .tab-content.is-active .productCarousel .productCarousel-slide').length){
                     block.find('.loadingOverlay').show();
-                    console.log('hi')
                     loadCategory(catId, catUrl, options, wrap, blockId);
                 }
                 })
             }
         }
-        // if($('.productCarousel-tabs').length > 0){
-        //     if(!$('.productCarousel-tabs .tab-content.is-active .productCarousel .productCarousel-slide').length){
-        //         var block = $('.productCarousel-tabs .tab-content.is-active'),
-        //             wrap = block.find('.productCarousel'),
-        //             catId = block.data('tab-category-id'),
-        //             catUrl = block.data('tab-category-url'),
-        //             blockId = block.attr('id');
 
-        //         if (catUrl.includes("http")) {
-        //             if (location.host.includes("en.superhairpieces.es")) {
-        //                 catUrl = catUrl.replace("//superhairpieces.es","//en.superhairpieces.es");
-        //             }
-        //         }
-        //         console.log(catUrl)
-        //         if(!$('.productCarousel-tabs .tab-content.is-active .productCarousel .productCarousel-slide').length){
-        //             block.find('.loadingOverlay').show();
-        //             loadCategory(catId, catUrl, options, wrap, blockId);
-        //         }
-        //     }
-
-        //     $('.productCarousel-tabs [data-tab]').on('toggled', (event, tab) => {
-        //         if(!$('.productCarousel-tabs .tab-content.is-active .productCarousel .productCarousel-slide').length){
-        //             var block = $('.productCarousel-tabs .tab-content.is-active'),
-        //                 wrap = block.find('.productCarousel'),
-        //                 catId = block.data('tab-category-id'),
-        //                 catUrl = block.data('tab-category-url'),
-        //                 blockId = block.attr('id');
-
-        //             if (catUrl.includes("http")) {
-        //                 if (location.host.includes("en.superhairpieces.es")) {
-        //                     catUrl = catUrl.replace("//superhairpieces.es","//en.superhairpieces.es");
-        //                 }
-        //             }
-
-        //             if(!$(event.currentTarget).find('.productCarousel').hasClass('slick-initialized')){
-        //                 block.find('.loadingOverlay').show();
-        //                 loadCategory(catId, catUrl, options, wrap, blockId);
-        //             }
-        //         }
-        //     });
-        // }
         function reviewShow(x) {
             var limit = document.querySelectorAll('.reviewCard1');
     
@@ -552,7 +511,7 @@ export default class Home extends PageManager {
 
         function slickCarousel(wrap){
             wrap.slick({
-                dots: true,
+                dots: false,
                 arrows: false,
                 infinite: false,
                 mobileFirst: true,
